@@ -20,7 +20,5 @@ public enum PromocaoType {
 
     private String descricao;
     private PromocaoStrategy promocaoStrategy;
-    public BigDecimal applicarPromossao(int quantity, BigDecimal price) {
-        return promocaoStrategy.aplicarPromocao(quantity, price, new Produto());
-    }
+
 }
