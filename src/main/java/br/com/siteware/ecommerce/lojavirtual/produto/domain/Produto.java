@@ -39,7 +39,6 @@ public class Produto {
         return this.promocao;
     }
 
-
     public void alterar(ProdutoAlteraRequest produtoRequest) {
         this.nome = produtoRequest.nome();
         this.preco = produtoRequest.preco();
