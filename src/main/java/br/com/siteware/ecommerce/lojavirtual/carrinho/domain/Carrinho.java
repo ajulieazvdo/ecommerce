@@ -28,13 +28,16 @@ public class Carrinho {
     @Id @GeneratedValue
     @JdbcType(VarcharJdbcType.class)
     private UUID idCarrinho;
+
     @Setter
     private BigDecimal total;
     private LocalDate dataDaCriacao;
     private LocalDate dataDaAtualizacao;
+
     @ManyToOne
     @JoinColumn(name = "cliente_id")
     private Cliente cliente;
+
     @OneToMany(mappedBy = "carrinho", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<ItemCarrinho> itens = new ArrayList<>();
 
@@ -135,5 +138,4 @@ public class Carrinho {
             throw APIException.build(HttpStatus.NOT_FOUND, "Item de carrinho não encontrado");
         }
     }
-
 }

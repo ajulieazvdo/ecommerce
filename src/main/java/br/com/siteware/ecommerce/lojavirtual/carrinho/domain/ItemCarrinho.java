@@ -1,6 +1,5 @@
 package br.com.siteware.ecommerce.lojavirtual.carrinho.domain;
 
-import br.com.siteware.ecommerce.lojavirtual.carrinho.application.api.ItemCarrinhoRequest;
 import br.com.siteware.ecommerce.lojavirtual.produto.domain.Produto;
 import br.com.siteware.ecommerce.lojavirtual.promocao.domain.PromocaoType;
 import jakarta.persistence.*;
@@ -13,7 +12,6 @@ import org.hibernate.annotations.JdbcType;
 import org.hibernate.type.descriptor.jdbc.VarcharJdbcType;
 
 import java.math.BigDecimal;
-import java.util.List;
 import java.util.UUID;
 
 @Getter
@@ -25,13 +23,10 @@ public class ItemCarrinho {
     @Id @GeneratedValue
     @JdbcType(VarcharJdbcType.class)
     private UUID idItemCarrinho;
-
     @ManyToOne
     @JoinColumn(name = "produto_id")
     private Produto produto;
-
     private Integer quantidade;
-
     @Enumerated(EnumType.STRING)
     private PromocaoType promocao;
     private BigDecimal precoTotalLiquido;

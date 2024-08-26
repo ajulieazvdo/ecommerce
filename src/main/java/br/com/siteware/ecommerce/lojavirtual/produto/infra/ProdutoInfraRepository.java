@@ -49,14 +49,6 @@ public class ProdutoInfraRepository implements ProdutoRepository {
     }
 
     @Override
-    public Optional<Produto> consultaProdutoOptionalAtravesId(UUID idProduto) {
-        log.info("[start] ProdutoInfraRepository - consultaProdutoAtravesId");
-        Optional<Produto> produtoOptional = produtoSpringJpaRepository.findById(idProduto);
-        log.info("[finish] ProdutoInfraRepository - consultaProdutoAtravesId");
-        return produtoOptional;
-    }
-
-    @Override
     public void deletarUmProduto(Produto produto) {
         log.info("[inicia] ProdutoInfraRepository - deletarUmProduto");
         produtoSpringJpaRepository.delete(produto);

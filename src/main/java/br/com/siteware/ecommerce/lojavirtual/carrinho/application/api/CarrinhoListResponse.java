@@ -1,6 +1,5 @@
 package br.com.siteware.ecommerce.lojavirtual.carrinho.application.api;
 
-import br.com.siteware.ecommerce.lojavirtual.carrinho.application.api.ItemCarrinhoResponse;
 import br.com.siteware.ecommerce.lojavirtual.carrinho.domain.Carrinho;
 
 import java.math.BigDecimal;
